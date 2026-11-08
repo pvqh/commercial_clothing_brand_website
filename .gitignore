@@ -1,0 +1,7 @@
+# Specs
+*.md
+
+# Secrets
+.env
+
+.specify
