@@ -1,0 +1,15 @@
+{
+  "name": "fur-catalog-tooling",
+  "private": true,
+  "description": "Front-end tooling only: CSS linting and Lighthouse CI",
+  "scripts": {
+    "lint:css": "stylelint \"static/css/**/*.css\"",
+    "lighthouse": "lhci autorun"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.15.0",
+    "stylelint": "^16.10.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-declaration-strict-value": "^1.10.0"
+  }
+}

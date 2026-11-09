@@ -1,0 +1,64 @@
+[project]
+name = "fur-catalog"
+version = "0.1.0"
+description = "Bilingual product catalog for a fur clothing brand"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "django>=6.1,<6.2",
+    "psycopg[binary]>=3.2,<4",
+    "dj-database-url>=2.3",
+    "pillow>=11.3",
+    "openpyxl>=3.1,<4",
+    "django-axes>=9,<10",
+    "whitenoise>=6.9,<7",
+    "gunicorn>=23",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "pytest-django>=4.10",
+    "playwright>=1.50",
+    "axe-playwright-python>=0.1.4",
+    "ruff>=0.12",
+    "mypy>=1.15",
+    "django-stubs[compatible-mypy]>=5.2",
+    "pip-audit>=2.9",
+    "pre-commit>=4.2",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+extend-exclude = ["*/migrations/*"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "DJ", "SIM", "RUF"]
+ignore = ["RUF001", "RUF002", "RUF003", "RUF012"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.mypy]
+python_version = "3.13"
+plugins = ["mypy_django_plugin.main"]
+ignore_missing_imports = true
+exclude = ["/migrations/"]
+
+[tool.django-stubs]
+django_settings_module = "config.settings.test"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings.test"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "--strict-markers -m 'not slow'"
+markers = ["slow: long-running tests (for example the 200-product import timing)"]
+filterwarnings = ["ignore:No directory at:UserWarning"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/fixtures/*" = ["E501"]

@@ -1,7 +1,29 @@
-# Specs
-*.md
 
-# Secrets
+
 .env
 
+.claude
 .specify
+
+# Python and Django
+.venv/
+__pycache__/
+*.pyc
+media/
+.test-media/
+staticfiles/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+.lighthouseci/
+
+# Generated test fixtures
+tests/fixtures/photos/
+tests/fixtures/*.xlsx
+tests/fixtures/*-report.csv
+
+# Compiled translations (built by compilemessages in CI and the Docker image)
+*.mo

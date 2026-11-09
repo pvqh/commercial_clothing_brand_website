@@ -1,0 +1,23 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "plugins": ["stylelint-declaration-strict-value"],
+  "rules": {
+    "scale-unlimited/declaration-strict-value": [
+      ["/color$/", "fill", "stroke", "font-family", "/^margin/", "/^padding/", "gap", "row-gap", "column-gap"],
+      {
+        "ignoreValues": ["inherit", "transparent", "currentcolor", "currentColor", "none", "0", "auto", "initial", "unset"],
+        "ignoreFunctions": false,
+        "disableFix": true
+      }
+    ],
+    "selector-class-pattern": null,
+    "custom-property-pattern": null,
+    "import-notation": null
+  },
+  "overrides": [
+    {
+      "files": ["static/css/tokens.css"],
+      "rules": { "scale-unlimited/declaration-strict-value": null }
+    }
+  ]
+}
