@@ -127,12 +127,22 @@ config/
 ├── urls.py                  # i18n_patterns: Russian at root, English under /en/
 └── wsgi.py
 catalog/                     # shopper-facing catalog
-├── models/                  # category.py, product.py, color_variant.py, photo.py, size_guide.py, slug_redirect.py
-├── services/                # listing_filters.py, listing_query.py, slugs.py, photo_renditions.py, publishing.py
-├── views/                   # home.py, category.py, product.py
+├── models/                  # category.py, product.py, color_variant.py, photo.py, size_guide.py,
+│                            #   slug_redirect.py, choices.py, translated.py, timestamped.py
+├── services/                # listing_filters.py, listing_query.py, product_availability.py,
+│                            #   size_guides.py, slugs.py, publishing.py,
+│                            #   photo_renditions.py + rendition_files.py (pure Pillow, runs in worker processes)
+├── views/                   # home.py, category.py, product.py, errors.py, robots.py and their helpers:
+│                            #   addresses.py, caching.py, pagination.py, slug_lookup.py
 ├── seo/                     # structured_data.py, sitemaps.py
-├── admin/                   # staff-area screens for catalog models
+├── admin/                   # staff-area screens: category, product (+ color/variant), size_guide,
+│                            #   staff_accounts, publishing_actions, labelled_inline
 ├── templatetags/            # localized field, price, picture tags
+├── management/commands/     # seed_demo_catalog, purge_login_attempts
+├── demo_catalog.py          # record builders shared by tests and seed_demo_catalog
+├── staff_group.py           # the "Catalog staff" group and its permissions
+├── middleware.py            # staff area: Russian only, X-Robots-Tag noindex
+├── context_processors.py    # header/footer navigation
 └── urls.py
 audit/                       # change history
 ├── models.py                # ChangeRecord
@@ -142,12 +152,18 @@ audit/                       # change history
 ├── migrations/              # includes the append-only trigger
 └── management/commands/anonymise_change_history.py
 catalog_import/              # one-time launch import
-├── workbook_reader.py
-├── row_validation.py
-├── importer.py
+├── workbook_reader.py       # sheets and columns → SheetRow
+├── row_fields.py            # typed reading of one row, reporting each bad value
+├── row_validation.py        # one validator per sheet → ValidatedCatalog
+├── validated_rows.py        # typed rows ready to save
+├── problems.py              # ImportProblem, ProblemLog
+├── catalog_writer.py        # saves the rows; renditions in parallel
+├── importer.py              # CatalogImporter.check / run
 ├── models.py                # CatalogImport
+├── WORKBOOK_FORMAT.md       # staff-facing format guide (Russian)
+├── catalog_template.xlsx    # empty workbook to fill in
 └── management/commands/import_catalog.py
-field_metrics/               # RUM beacon endpoint and RumSample
+field_metrics/               # RUM beacon endpoint, RumSample, purge_rum_samples
 templates/
 ├── base.html
 ├── components/              # shared component library (Principle VII), 21 files:
@@ -175,6 +191,7 @@ tests/
 └── fixtures/                # sample_catalog.xlsx; photos/ generated grey 2:3 images (no third-party assets)
 deploy/
 ├── Dockerfile
+├── Dockerfile.caddy         # Caddy with the rate-limit module
 ├── compose.yml              # web + caddy (production)
 ├── compose.dev.yml          # local PostgreSQL 17
 ├── Caddyfile
@@ -191,6 +208,15 @@ to change: `catalog` (what shoppers see and staff edit), `audit` (change history
 `catalog_import` (the one-time load), and `field_metrics` (performance beacon). There is no separate
 frontend, because pages are server-rendered and HTMX is a static file. Tests are grouped by kind so
 each CI gate runs one folder.
+
+**After implementation** (2026-11-09): the tree above is what was built. Two documents now sit
+outside this feature folder and cover the codebase as a whole:
+
+- [`docs/architecture-review.md`](../../docs/architecture-review.md) records the post-implementation
+  review: clean-up items, the deepening backlog AR01–AR09, and a "where new code goes" table.
+- [`GLOSSARY.md`](../../GLOSSARY.md) fixes the domain words.
+
+The review found no need to restructure the apps or folders.
 
 ## Complexity Tracking
 

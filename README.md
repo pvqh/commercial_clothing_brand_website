@@ -9,6 +9,10 @@ Feature specification, plan and decisions: [`specs/001-product-catalog/`](specs/
 ([plan](specs/001-product-catalog/plan.md), [research](specs/001-product-catalog/research.md),
 [quickstart and validation scenarios](specs/001-product-catalog/quickstart.md)).
 
+Before changing the code, read [`GLOSSARY.md`](GLOSSARY.md) for the domain words. Then read
+[`docs/architecture-review.md`](docs/architecture-review.md), which covers the clean-up backlog,
+the planned refactors, and where new code goes.
+
 ## Stack
 
 | Part | Technology |
