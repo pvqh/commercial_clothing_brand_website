@@ -1,0 +1,36 @@
+# Production: the web app behind Caddy. PostgreSQL is a managed service hosted in Russia
+# (research R2); its address comes from DATABASE_URL in deploy/.env.
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    env_file: .env
+    volumes:
+      - media:/app/media
+    restart: unless-stopped
+    expose:
+      - "8000"
+
+  caddy:
+    build:
+      context: .
+      dockerfile: Dockerfile.caddy
+    env_file: .env
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - media:/srv/media:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      - web
+    restart: unless-stopped
+
+volumes:
+  media:
+  caddy-data:
+  caddy-config:

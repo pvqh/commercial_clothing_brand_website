@@ -1,0 +1,30 @@
+{
+  "ci": {
+    "collect": {
+      "url": [
+        "http://localhost:8000/",
+        "http://localhost:8000/katalog/shuby/",
+        "http://localhost:8000/tovar/shuba-iz-norki-klassika/"
+      ],
+      "numberOfRuns": 3,
+      "settings": {
+        "preset": "perf",
+        "formFactor": "mobile",
+        "screenEmulation": { "mobile": true, "width": 360, "height": 740, "deviceScaleFactor": 2 },
+        "budgetPath": "budgets.json"
+      }
+    },
+    "assert": {
+      "assertions": {
+        "largest-contentful-paint": ["error", { "maxNumericValue": 2500 }],
+        "cumulative-layout-shift": ["error", { "maxNumericValue": 0.1 }],
+        "total-blocking-time": ["error", { "maxNumericValue": 200 }],
+        "resource-summary:script:size": ["error", { "maxNumericValue": 25600 }],
+        "resource-summary:stylesheet:size": ["error", { "maxNumericValue": 30720 }],
+        "resource-summary:font:size": ["error", { "maxNumericValue": 102400 }],
+        "largest-contentful-paint-element": "off"
+      }
+    },
+    "upload": { "target": "filesystem", "outputDir": ".lighthouseci" }
+  }
+}

@@ -1,0 +1,14 @@
+[Unit]
+Description=Daily catalog privacy maintenance (FR-044, research R10, R12)
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/fur-catalog/deploy
+# Remove staff names from change records older than three years.
+ExecStart=/usr/bin/docker compose exec -T web python manage.py anonymise_change_history
+# Delete failed sign-in records older than 24 hours.
+ExecStart=/usr/bin/docker compose exec -T web python manage.py purge_login_attempts
+# Delete performance samples older than 90 days.
+ExecStart=/usr/bin/docker compose exec -T web python manage.py purge_rum_samples
