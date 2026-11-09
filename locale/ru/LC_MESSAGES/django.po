@@ -1,0 +1,672 @@
+#
+msgid ""
+msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-09 16:33+0300\n"
+"Language: ru\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "staff member"
+msgstr "сотрудник"
+
+msgid "item type"
+msgstr "тип записи"
+
+msgid "old → new"
+msgstr "было → стало"
+
+msgid "undo"
+msgstr "отмена"
+
+msgid "Undo"
+msgstr "Отменить"
+
+msgid "Change undone"
+msgstr "Изменение отменено"
+
+msgid "created"
+msgstr "создано"
+
+msgid "changed"
+msgstr "изменено"
+
+msgid "deleted"
+msgstr "удалено"
+
+msgid "time"
+msgstr "время"
+
+msgid "change set"
+msgstr "группа изменений"
+
+msgid "item id"
+msgstr "номер записи"
+
+msgid "item"
+msgstr "запись"
+
+msgid "action"
+msgstr "действие"
+
+msgid "field"
+msgstr "поле"
+
+msgid "old value"
+msgstr "было"
+
+msgid "new value"
+msgstr "стало"
+
+msgid "undoes"
+msgstr "отменяет"
+
+msgid "change"
+msgstr "изменение"
+
+msgid "change history"
+msgstr "история изменений"
+
+msgid "This kind of item can no longer be changed."
+msgstr "Записи такого типа больше нельзя изменить."
+
+msgid "This item no longer exists."
+msgstr "Этой записи больше нет."
+
+msgid "This value has changed since; undo the later change first."
+msgstr ""
+"Значение с тех пор изменилось; сначала отмените более позднее изменение."
+
+msgid "An item with this number exists again, so it cannot be restored."
+msgstr "Запись с таким номером уже существует, восстановить её нельзя."
+
+msgid "The item it belonged to has been deleted, so it cannot be restored."
+msgstr ""
+"Запись, к которой она относилась, удалена, поэтому восстановить её нельзя."
+
+msgid "Other items still use this one, so it cannot be removed."
+msgstr "Эту запись используют другие записи, поэтому её нельзя удалить."
+
+msgid "Catalog: staff area"
+msgstr "Каталог: раздел для сотрудников"
+
+msgid "Staff area"
+msgstr "Раздел для сотрудников"
+
+msgid "Catalog management"
+msgstr "Управление каталогом"
+
+msgid "Publish selected"
+msgstr "Опубликовать выбранные"
+
+#, python-format
+msgid "Published: %(count)s."
+msgstr "Опубликовано: %(count)s."
+
+msgid "products"
+msgstr "товары"
+
+msgid "Missing English"
+msgstr "Нет перевода на английский"
+
+msgid "Yes"
+msgstr "Да"
+
+msgid "Sold out"
+msgstr "Распродано"
+
+msgid "No"
+msgstr "Нет"
+
+msgid "Categories (position 0 is the primary category)"
+msgstr "Категории (порядок 0 — основная категория)"
+
+msgid "Colors (open a color to edit its sizes, prices and stock)"
+msgstr "Цвета (откройте цвет, чтобы изменить размеры, цены и остатки)"
+
+#, python-format
+msgid "«%(product)s» was not published: %(rules)s"
+msgstr "«%(product)s» не опубликован: %(rules)s"
+
+msgid "Texts"
+msgstr "Тексты"
+
+msgid "Fur and materials"
+msgstr "Мех и материалы"
+
+msgid "Type and size guide"
+msgstr "Тип и таблица размеров"
+
+msgid "Publication"
+msgstr "Публикация"
+
+msgid "primary category"
+msgstr "основная категория"
+
+msgid "English filled in"
+msgstr "есть перевод"
+
+msgid "in stock"
+msgstr "в наличии"
+
+msgid "price, ₽"
+msgstr "цена, ₽"
+
+msgid "stock"
+msgstr "остаток"
+
+msgid "Unpublish selected"
+msgstr "Снять с публикации выбранные"
+
+#, python-format
+msgid "Unpublished: %(count)s."
+msgstr "Снято с публикации: %(count)s."
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "Access"
+msgstr "Доступ"
+
+msgid "name (Russian)"
+msgstr "название (RU)"
+
+msgid "name (English)"
+msgstr "название (EN)"
+
+msgid "position"
+msgstr "порядок"
+
+msgid "published"
+msgstr "опубликовано"
+
+msgid "category"
+msgstr "категория"
+
+msgid "categories"
+msgstr "категории"
+
+msgid "One size"
+msgstr "Единый размер"
+
+msgid "Natural (not dyed or treated)"
+msgstr "Натуральный (без окрашивания и обработки)"
+
+msgid "Dyed"
+msgstr "Окрашенный мех"
+
+msgid "Treated"
+msgstr "Обработанный мех"
+
+msgid "color"
+msgstr "цвет"
+
+msgid "colors"
+msgstr "цвета"
+
+msgid "size"
+msgstr "размер"
+
+msgid "price, kopecks"
+msgstr "цена, коп."
+
+msgid "variant"
+msgstr "вариант"
+
+msgid "variants"
+msgstr "варианты"
+
+msgid "A product cannot mix “One size” with letter sizes."
+msgstr ""
+"У товара не может быть одновременно «Единый размер» и буквенные размеры."
+
+msgid "Leave empty for a photo shared by every color."
+msgstr "Оставьте пустым, если фото подходит для всех цветов."
+
+msgid "photo"
+msgstr "фото"
+
+msgid "alt text (Russian)"
+msgstr "описание фото (RU)"
+
+msgid "alt text (English)"
+msgstr "описание фото (EN)"
+
+msgid "photos"
+msgstr "фото"
+
+msgid "name"
+msgstr "название"
+
+msgid "description"
+msgstr "описание"
+
+msgid "care"
+msgstr "уход"
+
+msgid "fur species"
+msgstr "вид меха"
+
+msgid "fur origin country"
+msgstr "страна происхождения меха"
+
+msgid "fur treatment"
+msgstr "обработка меха"
+
+msgid "treatment detail"
+msgstr "описание обработки"
+
+msgid "shell"
+msgstr "верх"
+
+msgid "lining"
+msgstr "подкладка"
+
+msgid "trim"
+msgstr "отделка"
+
+msgid "product type"
+msgstr "тип товара"
+
+msgid "size guide override"
+msgstr "своя таблица размеров"
+
+msgid "first published"
+msgstr "впервые опубликован"
+
+msgid "product"
+msgstr "товар"
+
+msgid "Describe the treatment when the fur is treated."
+msgstr "Опишите обработку, если мех обработан."
+
+msgid "category membership"
+msgstr "категория товара"
+
+msgid "category memberships"
+msgstr "категории товара"
+
+msgid "internal name"
+msgstr "внутреннее название"
+
+msgid "how to measure (Russian)"
+msgstr "как снять мерки (RU)"
+
+msgid "how to measure (English)"
+msgstr "как снять мерки (EN)"
+
+msgid "size guide"
+msgstr "таблица размеров"
+
+msgid "size guides"
+msgstr "таблицы размеров"
+
+msgid "chest, cm"
+msgstr "обхват груди, см"
+
+msgid "waist, cm"
+msgstr "обхват талии, см"
+
+msgid "hips, cm"
+msgstr "обхват бёдер, см"
+
+msgid "sleeve, cm"
+msgstr "длина рукава, см"
+
+msgid "length, cm"
+msgstr "длина изделия, см"
+
+msgid "size guide row"
+msgstr "строка таблицы размеров"
+
+msgid "size guide rows"
+msgstr "строки таблицы размеров"
+
+msgid "default size guide"
+msgstr "таблица размеров по умолчанию"
+
+msgid "product types"
+msgstr "типы товаров"
+
+msgid "Newest"
+msgstr "Сначала новые"
+
+msgid "Price: low to high"
+msgstr "Сначала дешевле"
+
+msgid "Price: high to low"
+msgstr "Сначала дороже"
+
+msgid "Add the product to at least one category."
+msgstr "Добавьте товар хотя бы в одну категорию."
+
+msgid "Add at least one color with at least one size."
+msgstr "Добавьте хотя бы один цвет хотя бы с одним размером."
+
+msgid "Add at least one photo and alt text in Russian for every photo."
+msgstr "Добавьте хотя бы одно фото и описание на русском для каждого фото."
+
+msgid "Fill in every required Russian text and the product type."
+msgstr "Заполните все обязательные тексты на русском и тип товара."
+
+msgid "Choose a size guide: the product type has none."
+msgstr "Выберите таблицу размеров: у типа товара её нет."
+
+msgid "Chest"
+msgstr "Грудь"
+
+msgid "Waist"
+msgstr "Талия"
+
+msgid "Hips"
+msgstr "Бёдра"
+
+msgid "Sleeve"
+msgstr "Рукав"
+
+msgid "Length"
+msgstr "Длина"
+
+msgid "catalog/"
+msgstr "katalog/"
+
+msgid "product/"
+msgstr "tovar/"
+
+#, python-format
+msgid "%(category)s: %(count)s products in the catalog."
+msgstr "%(category)s: товаров в каталоге — %(count)s."
+
+msgid "Catalog"
+msgstr "Каталог"
+
+#, python-format
+msgid "%(low)s–%(high)s ₽"
+msgstr "%(low)s–%(high)s ₽"
+
+#, python-format
+msgid "from %(low)s ₽"
+msgstr "от %(low)s ₽"
+
+#, python-format
+msgid "up to %(high)s ₽"
+msgstr "до %(high)s ₽"
+
+#, python-format
+msgid "%(category)s — page %(page)s"
+msgstr "%(category)s — страница %(page)s"
+
+msgid "Fur coats and accessories: the full catalog with prices and sizes."
+msgstr "Шубы и аксессуары из меха: весь каталог с ценами и размерами."
+
+msgid "The launch catalog has already been imported."
+msgstr "Стартовый каталог уже загружен. Повторная загрузка запрещена."
+
+msgid "running"
+msgstr "выполняется"
+
+msgid "completed"
+msgstr "завершена"
+
+msgid "failed"
+msgstr "прервана"
+
+msgid "started"
+msgstr "начало"
+
+msgid "finished"
+msgstr "окончание"
+
+msgid "status"
+msgstr "статус"
+
+msgid "workbook"
+msgstr "файл"
+
+msgid "run by"
+msgstr "запустил"
+
+msgid "products published"
+msgstr "опубликовано товаров"
+
+msgid "products saved as drafts"
+msgstr "сохранено черновиков"
+
+msgid "rows rejected"
+msgstr "отклонено строк"
+
+msgid "problems"
+msgstr "замечания"
+
+msgid "catalog import"
+msgstr "загрузка каталога"
+
+msgid "catalog imports"
+msgstr "загрузки каталога"
+
+msgid "Required field is empty."
+msgstr "Обязательное поле не заполнено."
+
+#, python-format
+msgid "The text is too long: at most %(limit)s characters."
+msgstr "Слишком длинный текст: не больше %(limit)s символов."
+
+msgid "The position must be a whole number not less than zero."
+msgstr "Порядок должен быть целым числом не меньше нуля."
+
+msgid "The measurement must be a number greater than zero."
+msgstr "Мерка должна быть числом больше нуля."
+
+#, python-format
+msgid "The row with key «%(key)s» on sheet %(sheet)s was rejected."
+msgstr "Строка с ключом «%(key)s» на листе %(sheet)s отклонена."
+
+#, python-format
+msgid "Unknown key «%(key)s»."
+msgstr "Неизвестный ключ «%(key)s»."
+
+#, python-format
+msgid "Duplicate key «%(key)s»."
+msgstr "Повторяющийся ключ «%(key)s»."
+
+#, python-format
+msgid "Unknown size «%(value)s»: use xxs … xxxl."
+msgstr "Неизвестный размер «%(value)s»: используйте xxs … xxxl."
+
+msgid "This size is already listed in the size guide."
+msgstr "Этот размер уже есть в таблице размеров."
+
+msgid "Use yes or no."
+msgstr "Укажите yes или no."
+
+msgid "This position is already used by another color."
+msgstr "Этот порядок уже занят другим цветом."
+
+#, python-format
+msgid "Unknown size «%(value)s»: use xxs … xxxl or one."
+msgstr "Неизвестный размер «%(value)s»: используйте xxs … xxxl или one."
+
+msgid "The price must be a whole number of rubles greater than zero."
+msgstr "Цена должна быть целым числом рублей больше нуля."
+
+msgid "The stock must be a whole number not less than zero."
+msgstr "Остаток должен быть целым числом не меньше нуля."
+
+msgid "This size is already listed for this color."
+msgstr "Этот размер уже указан для этого цвета."
+
+msgid "A product cannot mix the size one with letter sizes."
+msgstr "Нельзя сочетать размер one с буквенными размерами."
+
+msgid "Photos must be JPEG, PNG or WebP files."
+msgstr "Фото должны быть в формате JPEG, PNG или WebP."
+
+#, python-format
+msgid "File «%(file)s» was not found in the photos folder."
+msgstr "Файл «%(file)s» не найден в папке с фотографиями."
+
+#, python-format
+msgid "Unknown value «%(value)s»: use natural, dyed or treated."
+msgstr ""
+"Неизвестное значение «%(value)s»: используйте natural, dyed или treated."
+
+msgid "Page not found"
+msgstr "Страница не найдена"
+
+msgid "This page does not exist or is no longer available."
+msgstr "Такой страницы нет или она больше недоступна."
+
+msgid ""
+"This product or category is not available. It may have been removed or its "
+"address may be mistyped."
+msgstr ""
+"Этот товар или категория недоступны. Возможно, их сняли с витрины или в "
+"адресе опечатка."
+
+msgid "Go to the catalog"
+msgstr "Перейти в каталог"
+
+msgid "Django site admin"
+msgstr "Администрирование сайта"
+
+msgid "Django administration"
+msgstr "Администрирование"
+
+msgid "Skip to content"
+msgstr "Перейти к содержимому"
+
+#, python-format
+msgid "%(counter)s product"
+msgid_plural "%(counter)s products"
+msgstr[0] "%(counter)s товар"
+msgstr[1] "%(counter)s товара"
+msgstr[2] "%(counter)s товаров"
+
+msgid "View all"
+msgstr "Смотреть все"
+
+msgid "The catalog is being prepared. Please come back soon."
+msgstr "Каталог готовится. Загляните к нам чуть позже."
+
+#, python-format
+msgid "Back to %(category)s"
+msgstr "Назад: %(category)s"
+
+msgid "Active filters"
+msgstr "Выбранные фильтры"
+
+#, python-format
+msgid "Remove filter: %(name)s"
+msgstr "Убрать фильтр: %(name)s"
+
+msgid "Clear all"
+msgstr "Сбросить все"
+
+msgid "Breadcrumbs"
+msgstr "Навигационная цепочка"
+
+msgid "Other categories"
+msgstr "Другие категории"
+
+msgid "Color"
+msgstr "Цвет"
+
+msgid "Out of stock"
+msgstr "Нет в наличии"
+
+msgid "No products match the filters"
+msgstr "Нет товаров, подходящих под фильтры"
+
+msgid "Clear all filters"
+msgstr "Сбросить все фильтры"
+
+msgid "There are no products in this category yet."
+msgstr "В этой категории пока нет товаров."
+
+msgid "Size"
+msgstr "Размер"
+
+msgid "Price"
+msgstr "Цена"
+
+msgid "Price, ₽"
+msgstr "Цена, ₽"
+
+msgid "from"
+msgstr "от"
+
+msgid "to"
+msgstr "до"
+
+msgid "Sort"
+msgstr "Сортировка"
+
+msgid "Show"
+msgstr "Показать"
+
+msgid "Reset"
+msgstr "Сбросить"
+
+msgid "Characteristics"
+msgstr "Характеристики"
+
+msgid "Fur"
+msgstr "Мех"
+
+msgid "Country of origin of the fur"
+msgstr "Страна происхождения меха"
+
+msgid "Treatment"
+msgstr "Обработка"
+
+msgid "Shell"
+msgstr "Верх"
+
+msgid "Lining"
+msgstr "Подкладка"
+
+msgid "Trim"
+msgstr "Отделка"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "Care"
+msgstr "Уход"
+
+msgid "Pages"
+msgstr "Страницы"
+
+msgid "Previous page"
+msgstr "Предыдущая страница"
+
+msgid "Next page"
+msgstr "Следующая страница"
+
+#, python-format
+msgid "From %(price)s"
+msgstr "от %(price)s"
+
+msgid "Photos"
+msgstr "Фотографии"
+
+msgid "Categories"
+msgstr "Категории"
+
+msgid "Menu"
+msgstr "Меню"
+
+msgid "Size guide"
+msgstr "Таблица размеров"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "Size guide table"
+msgstr "Таблица размеров (прокручивается)"
+
+msgid "Body and garment measurements, centimetres (inches)"
+msgstr "Мерки тела и изделия, сантиметры (дюймы)"
+
+msgid "How to measure"
+msgstr "Как снять мерки"

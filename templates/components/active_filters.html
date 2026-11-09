@@ -1,0 +1,9 @@
+{% load i18n %}{% comment %}One remove link per active filter, plus "Clear all" (FR-010).{% endcomment %}
+{% if active_filters %}
+<ul class="active-filters" role="list" aria-label="{% translate 'Active filters' %}">
+  {% for chip in active_filters %}
+    <li><a class="active-filters__chip" href="{{ chip.url }}" aria-label="{% blocktranslate with name=chip.label %}Remove filter: {{ name }}{% endblocktranslate %}">{{ chip.label }}{% include "components/icon.html" with name="x" %}</a></li>
+  {% endfor %}
+  <li><a class="active-filters__clear" href="{{ unfiltered_url }}">{% translate "Clear all" %}</a></li>
+</ul>
+{% endif %}

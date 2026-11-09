@@ -1,0 +1,35 @@
+{% load i18n %}{% comment %}
+One GET form for sizes, price and sort (FR-006–FR-013). Without JavaScript the «Показать» button
+submits it; with HTMX every change refreshes #results and the result count in place.
+{% endcomment %}
+<form class="filter-bar" method="get" action="{{ unfiltered_url }}"
+      hx-get="{{ unfiltered_url }}" hx-trigger="change, keyup changed delay:600ms from:.filter-bar__price-input"
+      hx-select="#results" hx-target="#results" hx-swap="outerHTML" hx-select-oob="#result-count:innerHTML">
+  {% if offered_sizes %}
+  <details class="filter-bar__group">
+    <summary>{% translate "Size" %}{% if filters.sizes %} ({{ filters.sizes|length }}){% endif %}{% include "components/icon.html" with name="chevron-down" %}</summary>
+    <fieldset class="filter-bar__panel filter-bar__sizes">
+      <legend class="visually-hidden">{% translate "Size" %}</legend>
+      {% for size in offered_sizes %}
+        <label class="filter-bar__check"><input type="checkbox" name="size" value="{{ size.code }}"{% if size.code in chosen_size_codes %} checked{% endif %}><span>{{ size.label }}</span></label>
+      {% endfor %}
+    </fieldset>
+  </details>
+  {% endif %}
+  <details class="filter-bar__group">
+    <summary>{% translate "Price" %}{% if filters.has_price %} (1){% endif %}{% include "components/icon.html" with name="chevron-down" %}</summary>
+    <fieldset class="filter-bar__panel filter-bar__price">
+      <legend class="visually-hidden">{% translate "Price, ₽" %}</legend>
+      <label>{% translate "from" %} <input class="filter-bar__price-input" type="number" name="price_min" min="0" step="1" inputmode="numeric" value="{{ filters.price_min|default_if_none:'' }}"></label>
+      <label>{% translate "to" %} <input class="filter-bar__price-input" type="number" name="price_max" min="0" step="1" inputmode="numeric" value="{{ filters.price_max|default_if_none:'' }}"></label>
+    </fieldset>
+  </details>
+  <label class="filter-bar__sort">
+    <span>{% translate "Sort" %}</span>
+    <select name="sort">
+      {% for value, label in sort_choices %}<option value="{{ value }}"{% if value == filters.sort %} selected{% endif %}>{{ label }}</option>{% endfor %}
+    </select>
+  </label>
+  <button class="button button--primary filter-bar__submit" type="submit">{% translate "Show" %}</button>
+  <a class="filter-bar__reset" href="{{ unfiltered_url }}">{% translate "Reset" %}</a>
+</form>

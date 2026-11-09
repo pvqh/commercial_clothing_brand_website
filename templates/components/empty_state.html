@@ -1,0 +1,11 @@
+{% load i18n %}{% comment %}
+Shown when a listing has no products. With filters: a way back to every product (FR-011).
+{% endcomment %}
+<div class="empty-state">
+  {% if filters.is_active %}
+    <p class="empty-state__title">{% translate "No products match the filters" %}</p>
+    <p><a href="{{ unfiltered_url }}">{% translate "Clear all filters" %}</a></p>
+  {% else %}
+    <p class="empty-state__title">{% translate "There are no products in this category yet." %}</p>
+  {% endif %}
+</div>

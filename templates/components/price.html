@@ -1,0 +1,3 @@
+{% load i18n catalog_tags %}{% comment %}
+Price in rubles. amount: kopecks. is_from: show «от» / "From". large: product-page size.
+{% endcomment %}<span class="price{% if large %} price--large{% endif %}"{% if price_id %} id="{{ price_id }}"{% endif %}>{% if is_from %}{% blocktranslate with price=amount|rubles %}From {{ price }}{% endblocktranslate %}{% else %}{{ amount|rubles }}{% endif %}</span>

@@ -1,0 +1,21 @@
+{% extends "base.html" %}{% load i18n catalog_tags %}
+{% block title %}{{ page_title }} — {{ brand_name }}{% endblock %}
+{% block meta_description %}{{ meta_description }}{% endblock %}
+{% block og_title %}{{ page_title }} — {{ brand_name }}{% endblock %}
+{% block og_description %}{{ meta_description }}{% endblock %}
+{% block content %}
+<div class="container home">
+  <h1 class="visually-hidden">{{ page_title }}</h1>
+  {% for section in sections %}
+    {% with heading_id="section-"|add:section.category.slug_ru %}
+    <section class="home__section" aria-labelledby="{{ heading_id }}">
+      {% url 'catalog:category' slug=section.category|localized_slug as category_url %}
+      {% include "components/section_heading.html" with title=section.category|localized:"name" heading_id=heading_id link_url=category_url link_label=_("View all") %}
+      {% include "components/product_grid.html" with products=section.products %}
+    </section>
+    {% endwith %}
+  {% empty %}
+    <p>{% translate "The catalog is being prepared. Please come back soon." %}</p>
+  {% endfor %}
+</div>
+{% endblock %}

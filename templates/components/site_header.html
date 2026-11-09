@@ -1,0 +1,20 @@
+{% load i18n catalog_tags %}
+<header class="site-header">
+  <div class="container site-header__bar">
+    <a class="site-header__wordmark" href="{% url 'catalog:home' %}">{{ brand_name }}</a>
+    <nav class="site-header__nav" aria-label="{% translate 'Categories' %}">
+      {% for category in navigation_categories %}
+        <a class="site-header__link" href="{% url 'catalog:category' slug=category|localized_slug %}"{% if category.pk == current_category.pk %} aria-current="page"{% endif %}>{{ category|localized:"name" }}</a>
+      {% endfor %}
+    </nav>
+    <details class="site-header__menu">
+      <summary aria-label="{% translate 'Menu' %}">{% include "components/icon.html" with name="menu" %}</summary>
+      <nav class="site-header__menu-list" aria-label="{% translate 'Categories' %}">
+        {% for category in navigation_categories %}
+          <a class="site-header__link" href="{% url 'catalog:category' slug=category|localized_slug %}"{% if category.pk == current_category.pk %} aria-current="page"{% endif %}>{{ category|localized:"name" }}</a>
+        {% endfor %}
+      </nav>
+    </details>
+    {% include "components/language_switch.html" %}
+  </div>
+</header>

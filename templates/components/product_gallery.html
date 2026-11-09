@@ -1,0 +1,8 @@
+{% load i18n catalog_tags %}{% comment %}photos: gallery photos in order. A scroll-snap strip on mobile, a two-column grid from 1024px.{% endcomment %}
+<section class="product-gallery" aria-label="{% translate 'Photos' %}">
+  <ul class="product-gallery__strip" role="list">
+    {% for photo in photos %}
+      <li class="product-gallery__item">{% picture photo sizes="(min-width: 1024px) 30vw, 100vw" priority=forloop.first %}</li>
+    {% endfor %}
+  </ul>
+</section>

@@ -1,0 +1,125 @@
+/*
+ * Design tokens: the only file allowed to hold raw colors, font families and spacing values
+ * (research R4, design-reference.md §5). The accent is a placeholder until the brand guide
+ * sets the real one.
+ */
+@font-face {
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("../fonts/manrope-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("../fonts/manrope-latin.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308,
+    U+0329, U+2000-206F, U+20AC, U+20BD, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* Color */
+  --color-text: #111;
+  --color-text-muted: #595959;
+  --color-text-inverse: #fff;
+  --color-text-inverse-muted: #b3b3b3;
+  --color-surface: #fff;
+  --color-surface-subtle: #f7f7f7;
+  --color-surface-photo: #eee;
+  --color-surface-inverse: #1c1c20;
+  --color-border: #e6e6e6;
+  --color-border-control: #767676;
+  --color-accent: #7a4b2a;
+  --color-accent-tint: rgb(122 75 42 / 6%);
+  --color-focus: #005fcc;
+  --color-error: #b3261e;
+  --color-backdrop: rgb(0 0 0 / 45%);
+
+  /* Typography */
+  --font-family-base: "Manrope", system-ui, -apple-system, "Segoe UI", roboto, arial, sans-serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  --font-size-2xl: clamp(1.75rem, 1.5rem + 1vw, 2rem);
+  --line-height-tight: 1.2;
+  --line-height-base: 1.4;
+  --line-height-prose: 1.6;
+  --letter-spacing-caps: 0.04em;
+
+  /* Spacing */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 48px;
+  --space-9: 64px;
+  --space-10: 96px;
+  --space-section: var(--space-9);
+  --grid-gap-column: 12px;
+  --grid-gap-row: 32px;
+
+  /* Layout */
+  --container-max: 1600px;
+  --gutter: 16px;
+  --gutter-negative: calc(-1 * var(--gutter));
+  --header-height: 64px;
+  --info-panel-width: 420px;
+
+  /* Shape and controls */
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --border-width: 1px;
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --control-height: 48px;
+  --control-height-chip: 44px;
+  --icon-size: 20px;
+  --shadow-popover: 0 8px 24px rgb(0 0 0 / 12%);
+
+  /* Motion */
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --easing: ease-out;
+
+  /* Photos */
+  --ratio-product-photo: 2 / 3;
+}
+
+@media (width >= 600px) {
+  :root {
+    --gutter: 24px;
+  }
+}
+
+@media (width >= 1024px) {
+  :root {
+    --space-section: 120px;
+    --grid-gap-column: 20px;
+    --grid-gap-row: 48px;
+    --gutter: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+  }
+}

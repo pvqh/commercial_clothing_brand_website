@@ -1,0 +1,4 @@
+<picture class="picture">
+  {% for source in sources %}<source type="{{ source.type }}" srcset="{{ source.srcset }}" sizes="{{ sizes }}">
+  {% endfor %}<img src="{{ src }}"{% if jpeg_srcset %} srcset="{{ jpeg_srcset }}" sizes="{{ sizes }}"{% endif %} width="{{ width }}" height="{{ height }}" alt="{{ alt }}"{% if priority %} fetchpriority="high"{% else %} loading="lazy"{% endif %} decoding="async">
+</picture>

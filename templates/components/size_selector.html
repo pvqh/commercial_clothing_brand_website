@@ -1,0 +1,17 @@
+{% load i18n catalog_tags %}{% comment %}
+sizes: SizeOption items for the selected color (empty for one-size products, FR-029).
+show_prices: include each size's price in its accessible name when prices differ.
+{% endcomment %}
+{% if sizes %}
+<fieldset class="size-selector">
+  <legend class="size-selector__legend">{% translate "Size" %}</legend>
+  <div class="size-selector__options">
+    {% for option in sizes %}
+      <label class="size-chip{% if not option.in_stock %} size-chip--out{% endif %}">
+        <input class="size-chip__input" type="radio" name="size" value="{{ option.code }}"{% if not option.in_stock %} disabled{% endif %}>
+        <span class="size-chip__code">{{ option.label }}</span>{% if not option.in_stock %}<span class="size-chip__note">{% translate "Out of stock" %}</span>{% elif show_prices %}<span class="visually-hidden">, {{ option.price_kopecks|rubles }}</span>{% endif %}
+      </label>
+    {% endfor %}
+  </div>
+</fieldset>
+{% endif %}

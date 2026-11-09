@@ -1,0 +1,73 @@
+/*
+ * Staff-area theme: maps the Django admin's custom properties to the brand tokens, so the staff
+ * area follows the same colors and type as the shop (research R4, R8). Light theme only.
+ */
+:root,
+html[data-theme] {
+  --primary: var(--color-accent);
+  --secondary: var(--color-surface-inverse);
+  --accent: var(--color-text-inverse);
+  --primary-fg: var(--color-text-inverse);
+  --body-fg: var(--color-text);
+  --body-bg: var(--color-surface);
+  --body-quiet-color: var(--color-text-muted);
+  --body-medium-color: var(--color-text);
+  --body-loud-color: var(--color-text);
+  --header-color: var(--color-text-inverse-muted);
+  --header-branding-color: var(--color-text-inverse);
+  --header-bg: var(--color-surface-inverse);
+  --header-link-color: var(--color-text-inverse);
+  --breadcrumbs-fg: var(--color-text-inverse);
+  --breadcrumbs-link-fg: var(--color-text-inverse);
+  --breadcrumbs-bg: var(--color-accent);
+  --link-fg: var(--color-accent);
+  --link-hover-color: var(--color-text);
+  --link-selected-fg: var(--color-accent);
+  --hairline-color: var(--color-border);
+  --border-color: var(--color-border-control);
+  --error-fg: var(--color-error);
+  --darkened-bg: var(--color-surface-subtle);
+  --selected-bg: var(--color-surface-photo);
+  --selected-row: var(--color-accent-tint);
+  --button-fg: var(--color-text-inverse);
+  --button-bg: var(--color-accent);
+  --button-hover-bg: var(--color-text);
+  --default-button-bg: var(--color-text);
+  --default-button-hover-bg: var(--color-accent);
+  --close-button-bg: var(--color-text-muted);
+  --close-button-hover-bg: var(--color-text);
+  --delete-button-bg: var(--color-error);
+  --delete-button-hover-bg: var(--color-text);
+  --object-tools-fg: var(--color-text-inverse);
+  --object-tools-bg: var(--color-text-muted);
+  --object-tools-hover-bg: var(--color-text);
+  --font-family-primary: var(--font-family-base);
+
+  color-scheme: light;
+}
+
+.theme-toggle {
+  display: none;
+}
+
+.button,
+input[type="submit"],
+input[type="button"],
+.submit-row a.deletelink,
+.object-tools a {
+  border-radius: var(--radius-pill);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+select,
+textarea {
+  border-radius: var(--radius-sm);
+}
+
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}

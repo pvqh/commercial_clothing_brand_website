@@ -1,0 +1,12 @@
+{% load i18n %}{% comment %}pages: a PageNavigation (links, previous_url, next_url).{% endcomment %}
+{% if pages.links|length > 1 %}
+<nav class="pagination" aria-label="{% translate 'Pages' %}">
+  <ul role="list">
+    {% if pages.previous_url %}<li><a class="pagination__step" href="{{ pages.previous_url }}" rel="prev">{% include "components/icon.html" with name="arrow-left" %}<span class="visually-hidden">{% translate "Previous page" %}</span></a></li>{% endif %}
+    {% for link in pages.links %}
+      <li>{% if link.is_current %}<span class="pagination__page" aria-current="page">{{ link.number }}</span>{% else %}<a class="pagination__page" href="{{ link.url }}">{{ link.number }}</a>{% endif %}</li>
+    {% endfor %}
+    {% if pages.next_url %}<li><a class="pagination__step" href="{{ pages.next_url }}" rel="next">{% include "components/icon.html" with name="arrow-right" %}<span class="visually-hidden">{% translate "Next page" %}</span></a></li>{% endif %}
+  </ul>
+</nav>
+{% endif %}

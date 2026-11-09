@@ -1,0 +1,23 @@
+{% extends "base.html" %}{% load i18n catalog_tags %}
+{% block title %}{{ page_title }} — {{ brand_name }}{% endblock %}
+{% block meta_description %}{{ meta_description }}{% endblock %}
+{% block og_title %}{{ page_title }} — {{ brand_name }}{% endblock %}
+{% block og_description %}{{ meta_description }}{% endblock %}
+{% block content %}
+<div class="container listing">
+  {% include "components/breadcrumbs.html" %}
+  {% include "components/section_heading.html" with title=category|localized:"name" level=1 %}
+  {% include "components/category_chips.html" %}
+  {% include "components/filter_bar.html" %}
+  <p id="result-count" class="listing__count" aria-live="polite">{% blocktranslate count counter=page_obj.paginator.count %}{{ counter }} product{% plural %}{{ counter }} products{% endblocktranslate %}</p>
+  <div id="results" class="listing__results">
+    {% include "components/active_filters.html" %}
+    {% if page_obj.paginator.count %}
+      {% include "components/product_grid.html" with products=page_obj.object_list %}
+      {% include "components/pagination.html" %}
+    {% else %}
+      {% include "components/empty_state.html" %}
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

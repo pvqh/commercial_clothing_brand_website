@@ -1,0 +1,8 @@
+{% load i18n catalog_tags %}{% get_current_language as LANGUAGE_CODE %}
+{% if LANGUAGE_CODE == "en" %}
+  {% alternate_url "ru" as switch_url %}
+  <a class="language-switch" href="{{ switch_url }}" hreflang="ru" lang="ru">{% include "components/icon.html" with name="globe" %}<span aria-hidden="true">RU</span><span class="visually-hidden">Русская версия</span></a>
+{% else %}
+  {% alternate_url "en" as switch_url %}
+  <a class="language-switch" href="{{ switch_url }}" hreflang="en" lang="en">{% include "components/icon.html" with name="globe" %}<span aria-hidden="true">EN</span><span class="visually-hidden">English version</span></a>
+{% endif %}

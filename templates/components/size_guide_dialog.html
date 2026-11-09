@@ -1,0 +1,33 @@
+{% load i18n %}{% comment %}
+size_guide: a SizeGuideTable. Without JavaScript the guide is readable in a <details> element;
+static/js/size-guide.js moves it into a modal <dialog> opened by the "Size guide" button (FR-026).
+{% endcomment %}
+<div class="size-guide">
+  <button class="button button--secondary size-guide__open" type="button" hidden>{% include "components/icon.html" with name="ruler" %}{% translate "Size guide" %}</button>
+  <dialog class="size-guide__dialog" aria-labelledby="size-guide-title">
+    <div class="size-guide__header">
+      <h2 id="size-guide-title">{% translate "Size guide" %}</h2>
+      {% translate "Close" as close_label %}{% include "components/button.html" with variant="icon" icon="x" label=close_label extra_attrs="data-size-guide-close" %}
+    </div>
+  </dialog>
+  <details class="size-guide__fallback">
+    <summary>{% include "components/icon.html" with name="ruler" %}{% translate "Size guide" %}</summary>
+    <div class="size-guide__content">
+      <div class="size-guide__scroll" tabindex="0" role="region" aria-label="{% translate 'Size guide table' %}">
+        <table class="size-guide__table">
+          <caption>{% translate "Body and garment measurements, centimetres (inches)" %}</caption>
+          <thead>
+            <tr><th scope="col">{% translate "Size" %}</th>{% for heading in size_guide.headings %}<th scope="col">{{ heading }}</th>{% endfor %}</tr>
+          </thead>
+          <tbody>
+            {% for row in size_guide.rows %}
+              <tr><th scope="row">{{ row.label }}</th>{% for value in row.measurements %}<td>{{ value.cm }} <span class="muted">({{ value.inches }})</span></td>{% endfor %}</tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <h3 class="size-guide__subheading">{% translate "How to measure" %}</h3>
+      <div class="size-guide__prose">{{ size_guide.how_to_measure|linebreaks }}</div>
+    </div>
+  </details>
+</div>

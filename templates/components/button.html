@@ -1,0 +1,10 @@
+{% comment %}
+Button or button-styled link.
+  variant: "primary" | "secondary" | "icon"   label: visible text (accessible name for icons)
+  href: renders a link when given   type: button type (default "button")   icon: sprite id
+{% endcomment %}
+{% if href %}
+  <a class="button button--{{ variant|default:'primary' }}" href="{{ href }}"{% if variant == "icon" %} aria-label="{{ label }}"{% endif %}>{% if icon %}{% include "components/icon.html" with name=icon %}{% endif %}{% if variant != "icon" %}{{ label }}{% endif %}</a>
+{% else %}
+  <button class="button button--{{ variant|default:'primary' }}" type="{{ type|default:'button' }}"{% if variant == "icon" %} aria-label="{{ label }}"{% endif %}{% if extra_attrs %} {{ extra_attrs }}{% endif %}>{% if icon %}{% include "components/icon.html" with name=icon %}{% endif %}{% if variant != "icon" %}{{ label }}{% endif %}</button>
+{% endif %}

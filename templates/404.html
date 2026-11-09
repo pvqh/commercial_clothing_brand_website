@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{% translate "Page not found" %} — {{ brand_name }}{% endblock %}
+{% block meta_description %}{% translate "This page does not exist or is no longer available." %}{% endblock %}
+{% block alternates %}{% endblock %}
+{% block content %}
+<div class="container not-found">
+  <h1>{% translate "Page not found" %}</h1>
+  <p>{% translate "This product or category is not available. It may have been removed or its address may be mistyped." %}</p>
+  <p>{% url 'catalog:home' as home_url %}{% include "components/button.html" with href=home_url label=_("Go to the catalog") variant="primary" %}</p>
+</div>
+{% endblock %}

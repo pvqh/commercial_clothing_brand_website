@@ -1,0 +1,45 @@
+{% load static i18n catalog_tags %}<!doctype html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ brand_name }}{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}{% endblock %}">
+  {% block robots %}{% if noindex %}<meta name="robots" content="noindex, follow">{% endif %}{% endblock %}
+  {% block canonical %}{% if canonical_url %}<link rel="canonical" href="{{ canonical_url }}">{% endif %}{% endblock %}
+  {% block alternates %}
+  {% alternate_url "ru" as url_ru %}{% alternate_url "en" as url_en %}
+  <link rel="alternate" hreflang="ru" href="{{ url_ru }}">
+  <link rel="alternate" hreflang="en" href="{{ url_en }}">
+  <link rel="alternate" hreflang="x-default" href="{{ url_ru }}">
+  {% endblock %}
+  {% block open_graph %}
+  <meta property="og:site_name" content="{{ brand_name }}">
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+  <meta property="og:title" content="{% block og_title %}{{ brand_name }}{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}{% endblock %}">
+  {% if canonical_url %}<meta property="og:url" content="{{ canonical_url }}">{% endif %}
+  {% if og_image %}<meta property="og:image" content="{{ og_image }}">{% endif %}
+  <meta property="og:locale" content="{% if LANGUAGE_CODE == 'en' %}en_US{% else %}ru_RU{% endif %}">
+  {% endblock %}
+  <link rel="preload" href="{% static 'fonts/manrope-cyrillic.woff2' %}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{% static 'css/tokens.css' %}">
+  <link rel="stylesheet" href="{% static 'css/site.css' %}">
+  <link rel="icon" href="data:,">
+  <meta name="htmx-config" content='{"includeIndicatorStyles": false}'>
+  <script src="{% static 'vendor/htmx.min.js' %}" defer></script>
+  <script src="{% static 'vendor/web-vitals.iife.js' %}" defer></script>
+  <script src="{% static 'js/rum.js' %}" defer></script>
+  {% block head_scripts %}{% endblock %}
+  {% block json_ld %}{% endblock %}
+</head>
+<body data-route="{{ request.resolver_match.view_name|default:'' }}">
+  <a class="skip-link" href="#main">{% translate "Skip to content" %}</a>
+  {% include "components/site_header.html" %}
+  <main id="main" tabindex="-1">
+    {% block content %}{% endblock %}
+  </main>
+  {% include "components/site_footer.html" %}
+</body>
+</html>

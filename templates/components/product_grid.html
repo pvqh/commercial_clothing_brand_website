@@ -1,0 +1,6 @@
+{% comment %}products: products from listing_query. The first row loads its photos eagerly.{% endcomment %}
+<ul class="product-grid" role="list">
+  {% for product in products %}
+    <li>{% include "components/product_card.html" with product=product priority=forloop.first %}</li>
+  {% endfor %}
+</ul>

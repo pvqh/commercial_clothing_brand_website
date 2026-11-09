@@ -1,0 +1,22 @@
+{% load i18n catalog_tags %}{% comment %}
+colors: ColorState items (hidden when the product has one color). selected_color: the chosen Color.
+Plain links work without JavaScript; HTMX swaps #product-options in place and updates the address.
+{% endcomment %}
+{% if colors %}
+<nav class="color-options" aria-label="{% translate 'Color' %}">
+  <p class="color-options__label">{% translate "Color" %}: <span>{{ selected_color|localized:"name" }}</span></p>
+  <ul role="list">
+    {% for state in colors %}
+      <li>
+        <a class="color-options__option{% if state.is_out_of_stock %} color-options__option--out{% endif %}"
+           href="?color={{ state.color.pk }}"
+           hx-get="?color={{ state.color.pk }}" hx-select="#product-options" hx-target="#product-options" hx-swap="outerHTML" hx-push-url="true"
+           {% if state.color.pk == selected_color.pk %}aria-current="true"{% endif %}>
+          <span>{{ state.color|localized:"name" }}</span>
+          {% if state.is_out_of_stock %}<span class="color-options__note">{% translate "Out of stock" %}</span>{% endif %}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+{% endif %}

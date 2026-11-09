@@ -1,0 +1,18 @@
+{% load i18n static catalog_tags %}{% comment %}
+One listing card. product: a product from listing_query (card_price, card_price_is_from,
+card_sold_out, ordered_photos). priority: load the photo eagerly (first row only).
+{% endcomment %}
+<article class="product-card">
+  <a class="product-card__link" href="{% url 'catalog:product' slug=product|localized_slug %}">
+    <div class="product-card__photo">
+      {% with photo=product.ordered_photos|first %}
+        {% if photo %}{% picture photo sizes="(min-width: 1024px) 25vw, (min-width: 600px) 33vw, 50vw" priority=priority %}{% else %}<img src="{% static 'img/placeholder-2x3.svg' %}" width="720" height="1080" alt="">{% endif %}
+      {% endwith %}
+    </div>
+    <p class="product-card__title">{{ product|localized:"name" }}</p>
+  </a>
+  <p class="product-card__meta">
+    {% include "components/price.html" with amount=product.card_price is_from=product.card_price_is_from %}
+    {% if product.card_sold_out %}<span class="product-card__sold-out">{% translate "Sold out" %}</span>{% endif %}
+  </p>
+</article>

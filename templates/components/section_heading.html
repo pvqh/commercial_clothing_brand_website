@@ -1,0 +1,8 @@
+{% comment %}
+title: heading text. level: 1 or 2 (default 2). link_url / link_label: optional outlined pill link.
+heading_id: optional id for aria-labelledby.
+{% endcomment %}
+<div class="section-heading">
+  {% if level == 1 %}<h1{% if heading_id %} id="{{ heading_id }}"{% endif %}>{{ title }}</h1>{% else %}<h2{% if heading_id %} id="{{ heading_id }}"{% endif %}>{{ title }}</h2>{% endif %}
+  {% if link_url %}<a class="section-heading__link" href="{{ link_url }}">{{ link_label }}</a>{% endif %}
+</div>

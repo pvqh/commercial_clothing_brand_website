@@ -1,0 +1,19 @@
+{% load i18n catalog_tags %}
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div>
+      <a class="site-header__wordmark" href="{% url 'catalog:home' %}">{{ brand_name }}</a>
+    </div>
+    <nav aria-label="{% translate 'Catalog' %}">
+      <ul class="site-footer__links">
+        {% for category in navigation_categories %}
+          <li><a href="{% url 'catalog:category' slug=category|localized_slug %}">{{ category|localized:"name" }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <div class="site-footer__links">
+      {% include "components/language_switch.html" %}
+      <p class="site-footer__legal">© {% now "Y" %} {{ brand_name }}</p>
+    </div>
+  </div>
+</footer>

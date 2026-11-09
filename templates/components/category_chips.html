@@ -1,0 +1,8 @@
+{% load i18n catalog_tags %}{% comment %}A scrollable row of every navigation category; current_category is marked.{% endcomment %}
+<nav class="category-chips" aria-label="{% translate 'Other categories' %}">
+  <ul role="list">
+    {% for category in navigation_categories %}
+      <li><a class="category-chips__chip" href="{% url 'catalog:category' slug=category|localized_slug %}"{% if category.pk == current_category.pk %} aria-current="page"{% endif %}>{{ category|localized:"name" }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>

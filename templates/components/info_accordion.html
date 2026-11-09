@@ -1,0 +1,22 @@
+{% load i18n catalog_tags %}{% comment %}product: the product whose characteristics, description and care are shown.{% endcomment %}
+<div class="info-accordion">
+  <details class="info-accordion__section" open>
+    <summary>{% translate "Characteristics" %}{% include "components/icon.html" with name="chevron-down" %}</summary>
+    <dl class="info-accordion__facts">
+      <div><dt>{% translate "Fur" %}</dt><dd>{{ product|localized:"fur_species" }}</dd></div>
+      <div><dt>{% translate "Country of origin of the fur" %}</dt><dd>{{ product|localized:"fur_origin_country" }}</dd></div>
+      <div><dt>{% translate "Treatment" %}</dt><dd>{{ product.get_fur_treatment_display }}{% if product.fur_treatment == "treated" %}: {{ product|localized:"fur_treatment_detail" }}{% endif %}</dd></div>
+      <div><dt>{% translate "Shell" %}</dt><dd>{{ product|localized:"shell_material" }}</dd></div>
+      <div><dt>{% translate "Lining" %}</dt><dd>{{ product|localized:"lining_material" }}</dd></div>
+      {% if product.trim_material_ru %}<div><dt>{% translate "Trim" %}</dt><dd>{{ product|localized:"trim_material" }}</dd></div>{% endif %}
+    </dl>
+  </details>
+  <details class="info-accordion__section">
+    <summary>{% translate "Description" %}{% include "components/icon.html" with name="chevron-down" %}</summary>
+    <div class="info-accordion__prose">{{ product|localized:"description"|linebreaks }}</div>
+  </details>
+  <details class="info-accordion__section">
+    <summary>{% translate "Care" %}{% include "components/icon.html" with name="chevron-down" %}</summary>
+    <div class="info-accordion__prose">{{ product|localized:"care_instructions"|linebreaks }}</div>
+  </details>
+</div>

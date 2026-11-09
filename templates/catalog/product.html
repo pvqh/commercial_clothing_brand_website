@@ -1,0 +1,33 @@
+{% extends "base.html" %}{% load i18n static catalog_tags %}
+{% block title %}{{ page_title }} — {{ brand_name }}{% endblock %}
+{% block meta_description %}{{ meta_description }}{% endblock %}
+{% block og_type %}product{% endblock %}
+{% block og_title %}{{ page_title }}{% endblock %}
+{% block og_description %}{{ meta_description }}{% endblock %}
+{% block head_scripts %}<script type="module" src="{% static 'js/size-guide.js' %}"></script>{% endblock %}
+{% block json_ld %}{{ product_json_ld }}{{ breadcrumb_json_ld }}{% endblock %}
+{% block content %}
+<div class="container product-page">
+  {% include "components/breadcrumbs.html" %}
+  {% if primary_category %}
+    <a class="product-page__back" href="{% url 'catalog:category' slug=primary_category|localized_slug %}">{% include "components/icon.html" with name="arrow-left" %}{% blocktranslate with category=primary_category|localized:"name" %}Back to {{ category }}{% endblocktranslate %}</a>
+  {% endif %}
+  <div id="product-options" class="product-page__layout product-options">
+    {% include "components/product_gallery.html" with photos=gallery %}
+    <div class="product-page__panel">
+      <h1 class="product-page__title">{{ product|localized:"name" }}</h1>
+      {% if prices.is_known %}
+        <p class="product-page__price">
+          <span class="variant-price variant-price--from">{% include "components/price.html" with amount=prices.low_kopecks is_from=prices.is_from large=True %}</span>
+          {% for option in size_options %}{% if option.in_stock %}<span class="variant-price" data-size="{{ option.code }}">{% include "components/price.html" with amount=option.price_kopecks large=True %}</span>{% endif %}{% endfor %}
+        </p>
+      {% endif %}
+      {% if is_sold_out %}<p class="product-page__sold-out">{% translate "Sold out" %}</p>{% endif %}
+      {% include "components/color_options.html" with colors=color_options %}
+      {% include "components/size_selector.html" with sizes=size_options show_prices=prices.is_from %}
+      {% if size_options and size_guide %}{% include "components/size_guide_dialog.html" %}{% endif %}
+      {% include "components/info_accordion.html" %}
+    </div>
+  </div>
+</div>
+{% endblock %}

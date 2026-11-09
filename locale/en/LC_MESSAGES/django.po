@@ -1,0 +1,664 @@
+msgid ""
+msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-09 16:33+0300\n"
+"Language: en\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "staff member"
+msgstr ""
+
+msgid "item type"
+msgstr ""
+
+msgid "old → new"
+msgstr ""
+
+msgid "undo"
+msgstr ""
+
+msgid "Undo"
+msgstr ""
+
+msgid "Change undone"
+msgstr ""
+
+msgid "created"
+msgstr ""
+
+msgid "changed"
+msgstr ""
+
+msgid "deleted"
+msgstr ""
+
+msgid "time"
+msgstr ""
+
+msgid "change set"
+msgstr ""
+
+msgid "item id"
+msgstr ""
+
+msgid "item"
+msgstr ""
+
+msgid "action"
+msgstr ""
+
+msgid "field"
+msgstr ""
+
+msgid "old value"
+msgstr ""
+
+msgid "new value"
+msgstr ""
+
+msgid "undoes"
+msgstr ""
+
+msgid "change"
+msgstr ""
+
+msgid "change history"
+msgstr ""
+
+msgid "This kind of item can no longer be changed."
+msgstr ""
+
+msgid "This item no longer exists."
+msgstr ""
+
+msgid "This value has changed since; undo the later change first."
+msgstr ""
+
+msgid "An item with this number exists again, so it cannot be restored."
+msgstr ""
+
+msgid "The item it belonged to has been deleted, so it cannot be restored."
+msgstr ""
+
+msgid "Other items still use this one, so it cannot be removed."
+msgstr ""
+
+msgid "Catalog: staff area"
+msgstr ""
+
+msgid "Staff area"
+msgstr ""
+
+msgid "Catalog management"
+msgstr ""
+
+msgid "Publish selected"
+msgstr ""
+
+#, python-format
+msgid "Published: %(count)s."
+msgstr ""
+
+msgid "products"
+msgstr ""
+
+msgid "Missing English"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "Sold out"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "Categories (position 0 is the primary category)"
+msgstr ""
+
+msgid "Colors (open a color to edit its sizes, prices and stock)"
+msgstr ""
+
+#, python-format
+msgid "«%(product)s» was not published: %(rules)s"
+msgstr ""
+
+msgid "Texts"
+msgstr ""
+
+msgid "Fur and materials"
+msgstr ""
+
+msgid "Type and size guide"
+msgstr ""
+
+msgid "Publication"
+msgstr ""
+
+msgid "primary category"
+msgstr ""
+
+msgid "English filled in"
+msgstr ""
+
+msgid "in stock"
+msgstr ""
+
+msgid "price, ₽"
+msgstr ""
+
+msgid "stock"
+msgstr ""
+
+msgid "Unpublish selected"
+msgstr ""
+
+#, python-format
+msgid "Unpublished: %(count)s."
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Access"
+msgstr ""
+
+msgid "name (Russian)"
+msgstr ""
+
+msgid "name (English)"
+msgstr ""
+
+msgid "position"
+msgstr ""
+
+msgid "published"
+msgstr ""
+
+msgid "category"
+msgstr ""
+
+msgid "categories"
+msgstr ""
+
+msgid "One size"
+msgstr ""
+
+msgid "Natural (not dyed or treated)"
+msgstr ""
+
+msgid "Dyed"
+msgstr ""
+
+msgid "Treated"
+msgstr ""
+
+msgid "color"
+msgstr ""
+
+msgid "colors"
+msgstr ""
+
+msgid "size"
+msgstr ""
+
+msgid "price, kopecks"
+msgstr ""
+
+msgid "variant"
+msgstr ""
+
+msgid "variants"
+msgstr ""
+
+msgid "A product cannot mix “One size” with letter sizes."
+msgstr ""
+
+msgid "Leave empty for a photo shared by every color."
+msgstr ""
+
+msgid "photo"
+msgstr ""
+
+msgid "alt text (Russian)"
+msgstr ""
+
+msgid "alt text (English)"
+msgstr ""
+
+msgid "photos"
+msgstr ""
+
+msgid "name"
+msgstr ""
+
+msgid "description"
+msgstr ""
+
+msgid "care"
+msgstr ""
+
+msgid "fur species"
+msgstr ""
+
+msgid "fur origin country"
+msgstr ""
+
+msgid "fur treatment"
+msgstr ""
+
+msgid "treatment detail"
+msgstr ""
+
+msgid "shell"
+msgstr ""
+
+msgid "lining"
+msgstr ""
+
+msgid "trim"
+msgstr ""
+
+msgid "product type"
+msgstr ""
+
+msgid "size guide override"
+msgstr ""
+
+msgid "first published"
+msgstr ""
+
+msgid "product"
+msgstr ""
+
+msgid "Describe the treatment when the fur is treated."
+msgstr ""
+
+msgid "category membership"
+msgstr ""
+
+msgid "category memberships"
+msgstr ""
+
+msgid "internal name"
+msgstr ""
+
+msgid "how to measure (Russian)"
+msgstr ""
+
+msgid "how to measure (English)"
+msgstr ""
+
+msgid "size guide"
+msgstr ""
+
+msgid "size guides"
+msgstr ""
+
+msgid "chest, cm"
+msgstr ""
+
+msgid "waist, cm"
+msgstr ""
+
+msgid "hips, cm"
+msgstr ""
+
+msgid "sleeve, cm"
+msgstr ""
+
+msgid "length, cm"
+msgstr ""
+
+msgid "size guide row"
+msgstr ""
+
+msgid "size guide rows"
+msgstr ""
+
+msgid "default size guide"
+msgstr ""
+
+msgid "product types"
+msgstr ""
+
+msgid "Newest"
+msgstr ""
+
+msgid "Price: low to high"
+msgstr ""
+
+msgid "Price: high to low"
+msgstr ""
+
+msgid "Add the product to at least one category."
+msgstr ""
+
+msgid "Add at least one color with at least one size."
+msgstr ""
+
+msgid "Add at least one photo and alt text in Russian for every photo."
+msgstr ""
+
+msgid "Fill in every required Russian text and the product type."
+msgstr ""
+
+msgid "Choose a size guide: the product type has none."
+msgstr ""
+
+msgid "Chest"
+msgstr ""
+
+msgid "Waist"
+msgstr ""
+
+msgid "Hips"
+msgstr ""
+
+msgid "Sleeve"
+msgstr ""
+
+msgid "Length"
+msgstr ""
+
+msgid "catalog/"
+msgstr ""
+
+msgid "product/"
+msgstr ""
+
+#, python-format
+msgid "%(category)s: %(count)s products in the catalog."
+msgstr ""
+
+msgid "Catalog"
+msgstr ""
+
+#, python-format
+msgid "%(low)s–%(high)s ₽"
+msgstr ""
+
+#, python-format
+msgid "from %(low)s ₽"
+msgstr ""
+
+#, python-format
+msgid "up to %(high)s ₽"
+msgstr ""
+
+#, python-format
+msgid "%(category)s — page %(page)s"
+msgstr ""
+
+msgid "Fur coats and accessories: the full catalog with prices and sizes."
+msgstr ""
+
+msgid "The launch catalog has already been imported."
+msgstr ""
+
+msgid "running"
+msgstr ""
+
+msgid "completed"
+msgstr ""
+
+msgid "failed"
+msgstr ""
+
+msgid "started"
+msgstr ""
+
+msgid "finished"
+msgstr ""
+
+msgid "status"
+msgstr ""
+
+msgid "workbook"
+msgstr ""
+
+msgid "run by"
+msgstr ""
+
+msgid "products published"
+msgstr ""
+
+msgid "products saved as drafts"
+msgstr ""
+
+msgid "rows rejected"
+msgstr ""
+
+msgid "problems"
+msgstr ""
+
+msgid "catalog import"
+msgstr ""
+
+msgid "catalog imports"
+msgstr ""
+
+msgid "Required field is empty."
+msgstr ""
+
+#, python-format
+msgid "The text is too long: at most %(limit)s characters."
+msgstr ""
+
+msgid "The position must be a whole number not less than zero."
+msgstr ""
+
+msgid "The measurement must be a number greater than zero."
+msgstr ""
+
+#, python-format
+msgid "The row with key «%(key)s» on sheet %(sheet)s was rejected."
+msgstr ""
+
+#, python-format
+msgid "Unknown key «%(key)s»."
+msgstr ""
+
+#, python-format
+msgid "Duplicate key «%(key)s»."
+msgstr ""
+
+#, python-format
+msgid "Unknown size «%(value)s»: use xxs … xxxl."
+msgstr ""
+
+msgid "This size is already listed in the size guide."
+msgstr ""
+
+msgid "Use yes or no."
+msgstr ""
+
+msgid "This position is already used by another color."
+msgstr ""
+
+#, python-format
+msgid "Unknown size «%(value)s»: use xxs … xxxl or one."
+msgstr ""
+
+msgid "The price must be a whole number of rubles greater than zero."
+msgstr ""
+
+msgid "The stock must be a whole number not less than zero."
+msgstr ""
+
+msgid "This size is already listed for this color."
+msgstr ""
+
+msgid "A product cannot mix the size one with letter sizes."
+msgstr ""
+
+msgid "Photos must be JPEG, PNG or WebP files."
+msgstr ""
+
+#, python-format
+msgid "File «%(file)s» was not found in the photos folder."
+msgstr ""
+
+#, python-format
+msgid "Unknown value «%(value)s»: use natural, dyed or treated."
+msgstr ""
+
+msgid "Page not found"
+msgstr ""
+
+msgid "This page does not exist or is no longer available."
+msgstr ""
+
+msgid ""
+"This product or category is not available. It may have been removed or its "
+"address may be mistyped."
+msgstr ""
+
+msgid "Go to the catalog"
+msgstr ""
+
+msgid "Django site admin"
+msgstr ""
+
+msgid "Django administration"
+msgstr ""
+
+msgid "Skip to content"
+msgstr ""
+
+#, python-format
+msgid "%(counter)s product"
+msgid_plural "%(counter)s products"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "View all"
+msgstr ""
+
+msgid "The catalog is being prepared. Please come back soon."
+msgstr ""
+
+#, python-format
+msgid "Back to %(category)s"
+msgstr ""
+
+msgid "Active filters"
+msgstr ""
+
+#, python-format
+msgid "Remove filter: %(name)s"
+msgstr ""
+
+msgid "Clear all"
+msgstr ""
+
+msgid "Breadcrumbs"
+msgstr ""
+
+msgid "Other categories"
+msgstr ""
+
+msgid "Color"
+msgstr ""
+
+msgid "Out of stock"
+msgstr ""
+
+msgid "No products match the filters"
+msgstr ""
+
+msgid "Clear all filters"
+msgstr ""
+
+msgid "There are no products in this category yet."
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
+msgid "Price"
+msgstr ""
+
+msgid "Price, ₽"
+msgstr ""
+
+msgid "from"
+msgstr ""
+
+msgid "to"
+msgstr ""
+
+msgid "Sort"
+msgstr ""
+
+msgid "Show"
+msgstr ""
+
+msgid "Reset"
+msgstr ""
+
+msgid "Characteristics"
+msgstr ""
+
+msgid "Fur"
+msgstr ""
+
+msgid "Country of origin of the fur"
+msgstr ""
+
+msgid "Treatment"
+msgstr ""
+
+msgid "Shell"
+msgstr ""
+
+msgid "Lining"
+msgstr ""
+
+msgid "Trim"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Care"
+msgstr ""
+
+msgid "Pages"
+msgstr ""
+
+msgid "Previous page"
+msgstr ""
+
+msgid "Next page"
+msgstr ""
+
+#, python-format
+msgid "From %(price)s"
+msgstr ""
+
+msgid "Photos"
+msgstr ""
+
+msgid "Categories"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+msgid "Size guide"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Size guide table"
+msgstr ""
+
+msgid "Body and garment measurements, centimetres (inches)"
+msgstr ""
+
+msgid "How to measure"
+msgstr ""
